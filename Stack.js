@@ -34,5 +34,7 @@ class Stack {
     const node = this.top;
     this.top = node.next;
     return node.data;
+  }
 }
-}
+
+module.exports = Stack;
