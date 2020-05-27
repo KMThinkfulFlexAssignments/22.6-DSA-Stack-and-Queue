@@ -67,7 +67,26 @@ function is_palindrome(str) {
 //console.log(is_palindrome('Tauhida'));
 
 //4. Matching parentheses in an expression
-
+function matchParentheses(str) {
+  let stack = new Stack;
+  for(let i = 0; i < str.length; i++) {
+    const char = str.charAt(i);
+    if(char === '(') {
+      stack.push(char);
+    } else if (char === ')') {
+      if(peek(stack) === 'Stack is empty') {
+        return false;
+      }
+      stack.pop();
+    }
+  }
+  if(peek(stack) !== 'Stack is empty') {
+    return false;
+  }
+  return true;
+}
+console.log(matchParentheses('(1 + 2) + 3'));
+console.log(matchParentheses('1 + 2) + 3'));
 
 //5. Sort stack
 function sortStack(stack){
@@ -88,7 +107,7 @@ testStack.push('3');
 testStack.push(5);
 testStack.push('2');
 testStack.push(4);
-sortStack(testStack);
+//sortStack(testStack);
 
 //6. Create a queue using a Singly Linked List
 
