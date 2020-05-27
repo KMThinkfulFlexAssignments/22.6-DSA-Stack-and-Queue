@@ -1,6 +1,5 @@
 'use strict';
 const Stack = require('./Stack');
-const Queue = require('./Queue');
 
 //1. Create a stack class
 function mainStack() {
@@ -108,13 +107,3 @@ testStack.push(5);
 testStack.push('2');
 testStack.push(4);
 //sortStack(testStack);
-
-//6. Create a queue using a Singly Linked List
-
-//7. Create a queue using a Doubly Linked List
-
-//8. Queue implementation using a stack
-
-//9. Square dance pairings
-
-//10. The Ophidian Bank
