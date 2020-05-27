@@ -42,14 +42,53 @@ function display(stack) {
     currentNode = currentNode.next;
   }
 }
-display(mainStack());
-display(mainStack().pop());
+//display(mainStack());
+//display(mainStack().pop());
 
 //3. Check for palindromes using a stack
+function is_palindrome(str) {
+  str = str.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
+  let palindromeStack = new Stack();
+  for(let i = 0; i < str.length; i++) {
+    palindromeStack.push(str[i]);
+  }
+
+  for(let i = 0; i < str.length; i++) {
+    let poppedItem = palindromeStack.pop();
+    if (poppedItem !== str[i]) {
+      return false;
+    }
+    return true;
+  }
+}
+//console.log(is_palindrome('dad'));
+//console.log(is_palindrome('A man, a plan, a canal: Panama'));
+//console.log(is_palindrome('1001'));
+//console.log(is_palindrome('Tauhida'));
 
 //4. Matching parentheses in an expression
 
+
 //5. Sort stack
+function sortStack(stack){
+  let original = stack;
+  let sortedStack = new Stack;
+  while(original.top) {
+    let elementToMove = original.pop();
+    while(sortedStack.top && parseInt(sortedStack.top.data) < elementToMove) {
+      original.push(sortedStack.pop());
+    }
+    sortedStack.push(elementToMove);
+  }
+  display(sortedStack);
+}
+let testStack = new Stack;
+testStack.push(1);
+testStack.push('3');
+testStack.push(5);
+testStack.push('2');
+testStack.push(4);
+sortStack(testStack);
 
 //6. Create a queue using a Singly Linked List
 
